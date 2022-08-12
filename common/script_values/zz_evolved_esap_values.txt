@@ -1,0 +1,8 @@
+years_of_peace_capped = {
+	base = 0 
+	complex_trigger_modifier = {
+		trigger = years_of_peace
+		mode = add
+	}
+	max = $CAP$
+}

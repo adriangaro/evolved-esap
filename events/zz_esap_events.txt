@@ -1,0 +1,62 @@
+namespace = esap_ethics
+
+
+# Militarist 2, updates penalty from not waging war.
+country_event = {
+	id = esap_ethics.4
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_ascension_perk = ap_esap_militarist_2	
+	}
+	
+	immediate = {
+		remove_modifier = mod_esap_militarist_2_1
+		add_modifier = {
+			modifier = mod_esap_militarist_2_1
+			multiplier = value:years_of_peace_capped|CAP|10|
+			days = -1
+		}
+	}
+}	
+
+# Peacifist 2, updates bonus from not waging war.
+country_event = {
+	id = esap_ethics.5
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_ascension_perk = ap_esap_pacifist_2	
+	}
+	
+	immediate = {
+		remove_modifier = mod_esap_pacifist_2_1
+		add_modifier = {
+			modifier = mod_esap_pacifist_2_1
+			multiplier = value:years_of_peace_capped|CAP|50|
+			days = -1
+		}
+	}
+}	
+
+# Materialist 2, unity from researching techs
+country_event = {
+	id = esap_ethics.8
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		has_ascension_perk = ap_esap_materialist_2
+	}
+	
+	immediate = {
+		add_monthly_resource_mult = {
+			resource = unity
+			value = 2
+			min = 10
+			max = 2000 # nerfed a bit as it becomes really strong 
+		}
+	}
+}	
